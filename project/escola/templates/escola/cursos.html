@@ -1,0 +1,16 @@
+<h1>Cursos 📚</h1>
+
+{% for curso in cursos %}
+    <h2>{{ curso.nome }}</h2>
+
+    <p><strong>Professor:</strong> {{ curso.professor.nome }}</p>
+
+    <p><strong>Alunos:</strong></p>
+    <ul>
+        {% for aluno in curso.alunos.all %}
+            <li>{{ aluno.nome }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+{% endfor %}
